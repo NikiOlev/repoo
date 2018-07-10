@@ -1,0 +1,21 @@
+{% extends 'bud/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+  <form action="" method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <label for="categoryInput">Expense Categories (hit enter after everycategory)</label>
+    <input type="text" mane="categoryInput" id="categoryInput">
+    <input type="hidden" name="categoriesString">
+    <ul id="categoriesContainer">
+
+    </ul>
+
+    <button type="submit" class="btn">Start Project</button>
+
+  </form>
+</div>
+<script src="{% static 'js/script.js' %}"></script>
+{% endblock %}
